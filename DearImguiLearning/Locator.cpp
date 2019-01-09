@@ -1,0 +1,3 @@
+#include "Locator.hpp"
+
+sf::RenderWindow* Locator::gRenderWindow = nullptr;
