@@ -26,7 +26,6 @@ sf::RenderWindow* ImGuiManager::initialize()
 	sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(640, 480), "");
 	renderWindow->setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(*renderWindow);
-	renderWindow->resetGLStates(); // call it if you only draw ImGui. Otherwise not needed.
 	// Provide to locator
 	Locator::provide(renderWindow);
 

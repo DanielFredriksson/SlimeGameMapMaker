@@ -171,6 +171,7 @@
     <ClCompile Include="DearImguiLearning.cpp" />
     <ClCompile Include="ImGuiManager.cpp" />
     <ClCompile Include="Locator.cpp" />
+    <ClCompile Include="MapRenderer.cpp" />
     <ClCompile Include="Widget.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -180,6 +181,7 @@
     <ClInclude Include="iRenderWindow.hpp" />
     <ClInclude Include="Locator.hpp" />
     <ClInclude Include="LocatorGuide.hpp" />
+    <ClInclude Include="MapRenderer.hpp" />
     <ClInclude Include="RenderWindow.hpp" />
     <ClInclude Include="Widget.hpp" />
     <ClInclude Include="Window.hpp" />

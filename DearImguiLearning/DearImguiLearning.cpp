@@ -21,8 +21,12 @@
 #include "Locator.hpp"
 #include "RenderWindow.hpp"
 
+/// IMGUI-Manager
 #include "ImGuiManager.hpp"
 #include "Window.hpp"
+
+// TESTING
+#include "MapRenderer.hpp"
 
 
 int main()
@@ -31,6 +35,7 @@ int main()
 	// Initialize ImGuiManager, which sets up the ImGui as well as windows & widgets
 	ImGuiManager& manager = ImGuiManager::getInstance();
 	sf::RenderWindow* renderWindow = manager.initialize();
+	MapRenderer mapRenderer;
 
 	// If additional input to the widgets is needed, add one in the WidgetInput definition.
 	WidgetInput wInput;
@@ -43,6 +48,10 @@ int main()
 
 		// Update State
 		ImGui::SFML::Update(*renderWindow, deltaClock.restart());
+
+		// --- Render with SFML
+		renderWindow->draw(mapRenderer);
+		// --- Render with SFML
 
 		// Update Windows & Widgets
 		manager.updateWindows();

@@ -57,6 +57,9 @@
     <ClCompile Include="Locator.cpp">
       <Filter>Source Files\Locator</Filter>
     </ClCompile>
+    <ClCompile Include="MapRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImGuiManager.hpp">
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="RenderWindow.hpp">
       <Filter>Header Files\Locator</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRenderer.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
