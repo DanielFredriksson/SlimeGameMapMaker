@@ -43,22 +43,24 @@ int main()
 
 	sf::Clock deltaClock;
 	while (renderWindow->isOpen()) {
+		/// -- UPDATING --
 		// Process Events
 		manager.processEvents(*renderWindow);
-
 		// Update State
 		ImGui::SFML::Update(*renderWindow, deltaClock.restart());
-
-		// --- Render with SFML
-		renderWindow->draw(mapRenderer);
-		// --- Render with SFML
-
 		// Update Windows & Widgets
 		manager.updateWindows();
 
-		// Clear, Render, and display
-	//	ImGui::ShowTestWindow(); USED FOR TESTING!!!
-		manager.display(*renderWindow, wInput.bgColor);
+		/// -- RENDERING --
+		// Clear
+		renderWindow->clear(wInput.bgColor); // fill background with color
+		// Render Map(SFML)
+		renderWindow->draw(mapRenderer);
+		// Render ImGui
+		ImGui::SFML::Render(*renderWindow);
+		//ImGui::ShowTestWindow(); USED FOR TESTING!!!
+		// Display
+		renderWindow->display();
 	}
 
 	ImGui::SFML::Shutdown();

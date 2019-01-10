@@ -47,7 +47,6 @@ public:
 	void processEvents(sf::RenderWindow &window);
 	void updateState(sf::RenderWindow &window, sf::Clock &deltaClock);
 	void updateWidgets(sf::RenderWindow &window, WidgetInput& wInput);
-	void display(sf::RenderWindow &window, sf::Color bgColor);
 };
 
 

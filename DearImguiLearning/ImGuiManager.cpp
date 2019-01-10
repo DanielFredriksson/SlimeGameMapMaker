@@ -122,9 +122,3 @@ void ImGuiManager::updateWidgets(sf::RenderWindow &window, WidgetInput& wInput)
 	ImGui::End();
 }
 
-void ImGuiManager::display(sf::RenderWindow &window, sf::Color bgColor)
-{
-	window.clear(bgColor); // fill background with color
-	ImGui::SFML::Render(window);
-	window.display();
-}
