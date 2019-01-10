@@ -12,6 +12,7 @@
 
 #include "Window.hpp"
 #include <vector>
+#include "MapRenderer.hpp"
 
 /*
 This struct is used to simplify input to widgets. Widgets need references so that
@@ -34,6 +35,7 @@ private:
 	// Something that contains internal-windows + widget information.
 	// Like an 'InternalWindow' class which keeps track of it's widgets and whatnot.
 	std::vector<Window*> windows;
+	MapRenderer mapRenderer;
 
 public:
 	ImGuiManager();

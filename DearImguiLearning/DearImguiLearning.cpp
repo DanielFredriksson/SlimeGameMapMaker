@@ -28,7 +28,6 @@
 // TESTING
 #include "MapRenderer.hpp"
 
-
 int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
@@ -55,11 +54,11 @@ int main()
 		// Clear
 		renderWindow->clear(wInput.bgColor); // fill background with color
 		// Render Map(SFML)
-		renderWindow->draw(mapRenderer);
+		mapRenderer.renderGrid();
 		// Render ImGui
 		ImGui::SFML::Render(*renderWindow);
 		//ImGui::ShowTestWindow(); USED FOR TESTING!!!
-		// Display
+		// Display 
 		renderWindow->display();
 	}
 

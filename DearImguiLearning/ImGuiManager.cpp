@@ -23,7 +23,9 @@ ImGuiManager& ImGuiManager::getInstance()
 sf::RenderWindow* ImGuiManager::initialize()
 {
 	/// ---------- Set Up RenderWindow ---------- 
-	sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(640, 480), "");
+	int screenPixelHeight = sf::VideoMode::getDesktopMode().height;
+	int screenPixelWidth = sf::VideoMode::getDesktopMode().width;
+	sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(screenPixelWidth, screenPixelHeight), "");
 	renderWindow->setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(*renderWindow);
 	// Provide to locator
