@@ -1,7 +1,8 @@
 #include "ImGuiManager.hpp"
-
-#include "InputText.hpp"
 #include "Locator.hpp"
+
+#include "InputText.h"
+#include "DisplayText.h"
 
 ImGuiManager::ImGuiManager()
 {
@@ -28,13 +29,16 @@ sf::RenderWindow* ImGuiManager::initialize()
 	sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(screenPixelWidth, screenPixelHeight), "");
 	renderWindow->setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(*renderWindow);
+	renderWindow->resetGLStates();
 	// Provide to locator
 	Locator::provide(renderWindow);
 
+	/// ---------- Set Up MapRenderer ----------
+//	this->mapRenderer.initialize(renderWindow);
+	
 
-
-	/// ------------- WINDOW 0 -------------
-	Window* window0 = new Window();
+	/// ------------- WINDOW_0 TEST -------------
+	Window* window0 = new Window("Test window!");
 	this->windows.push_back(window0);
 	/// ---- Title Widget ----
 	// Widget Definition
@@ -52,7 +56,28 @@ sf::RenderWindow* ImGuiManager::initialize()
 	// Add widget to window
 	window0->addWidget(titleW);
 	
-	/// --- Widget ---
+	/// ------------- WINDOW_1 INFORMATION -------------
+	Window* informationWindow = new Window("Information Window!");
+	this->windows.push_back(informationWindow);
+	/// ---- Mouse Coordinations Widget ----
+	// Widget Definition
+	DisplayText* infoW = new DisplayText();
+	// Behavior Definition
+	std::function<void(Widget*)> infoB = [](Widget* self) {
+		if (ImGui::IsMousePosValid()) {
+			// Display mouse coordinates
+			ImGui::Text(
+				"Mouse Coordinates: (%.1f,%.1f)",
+				ImGui::GetIO().MousePos.x, 
+				ImGui::GetIO().MousePos.y
+			);
+		}
+	};
+	// Add behavior to widget
+	infoW->addBehavior(infoB);
+	informationWindow->addWidget(infoW);
+
+	/// ------------- WINDOW_2 INFORMATION -------------
 
 
 	return renderWindow;

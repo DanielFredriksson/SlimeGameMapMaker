@@ -15,11 +15,11 @@
 #include "../imgui-sfml-master/imgui-SFML.h"
 
 /// Widgets
-#include "InputText.hpp"
+#include "InputText.h"
 
 /// Locator
 #include "Locator.hpp"
-#include "RenderWindow.hpp"
+#include "RenderWindow.h"
 
 /// IMGUI-Manager
 #include "ImGuiManager.hpp"
@@ -34,7 +34,6 @@ int main()
 	// Initialize ImGuiManager, which sets up the ImGui as well as windows & widgets
 	ImGuiManager& manager = ImGuiManager::getInstance();
 	sf::RenderWindow* renderWindow = manager.initialize();
-	MapRenderer mapRenderer;
 
 	// If additional input to the widgets is needed, add one in the WidgetInput definition.
 	WidgetInput wInput;
@@ -54,10 +53,11 @@ int main()
 		// Clear
 		renderWindow->clear(wInput.bgColor); // fill background with color
 		// Render Map(SFML)
-		mapRenderer.renderGrid();
+		//manager.renderGrid();
 		// Render ImGui
+	//	ImGui::ShowTestWindow();	// USED FOR TESTING!!!
 		ImGui::SFML::Render(*renderWindow);
-		//ImGui::ShowTestWindow(); USED FOR TESTING!!!
+		
 		// Display 
 		renderWindow->display();
 	}

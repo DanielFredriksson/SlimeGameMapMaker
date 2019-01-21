@@ -2,7 +2,7 @@
 #define RENDERWINDOW_HPP
 
 
-#include "iRenderWindow.hpp"
+#include "iRenderWindow.h"
 
 
 class RenderWindow : public iRenderWindow {

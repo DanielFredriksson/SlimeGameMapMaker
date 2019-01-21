@@ -44,6 +44,8 @@ public:
 	static ImGuiManager& getInstance();
 	sf::RenderWindow* initialize();
 	void clean();
+
+	void renderGrid() { this->mapRenderer.renderGrid(); }
 	
 	void updateWindows();
 	void processEvents(sf::RenderWindow &window);

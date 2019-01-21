@@ -17,11 +17,11 @@
 
 class Window {
 private:
-	std::vector<char> title;
+	std::string title;
 	std::vector<Widget*> widgets;
 
 public:
-	Window();
+	Window(std::string title);
 	~Window();
 	void initialize();
 	void clean();

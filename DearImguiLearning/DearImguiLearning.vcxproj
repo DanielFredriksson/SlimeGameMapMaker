@@ -176,13 +176,15 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="DisplayText.h" />
     <ClInclude Include="ImGuiManager.hpp" />
-    <ClInclude Include="InputText.hpp" />
-    <ClInclude Include="iRenderWindow.hpp" />
+    <ClInclude Include="InputText.h" />
+    <ClInclude Include="iRenderWindow.h" />
     <ClInclude Include="Locator.hpp" />
-    <ClInclude Include="LocatorGuide.hpp" />
+    <ClInclude Include="LocatorGuide.h" />
     <ClInclude Include="MapRenderer.hpp" />
-    <ClInclude Include="RenderWindow.hpp" />
+    <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="Widget.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>
