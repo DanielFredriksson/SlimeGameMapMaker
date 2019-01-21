@@ -1,7 +1,8 @@
 #include "ImGuiManager.hpp"
+#include "Locator.hpp"
 
 #include "InputText.hpp"
-#include "Locator.hpp"
+#include "DisplayText.hpp"
 
 ImGuiManager::ImGuiManager()
 {
@@ -28,13 +29,16 @@ sf::RenderWindow* ImGuiManager::initialize()
 	sf::RenderWindow* renderWindow = new sf::RenderWindow(sf::VideoMode(screenPixelWidth, screenPixelHeight), "");
 	renderWindow->setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(*renderWindow);
+	renderWindow->resetGLStates();
 	// Provide to locator
 	Locator::provide(renderWindow);
 
+	/// ---------- Set Up MapRenderer ----------
+	this->mapRenderer.initialize(renderWindow);
+	
 
-
-	/// ------------- WINDOW 0 -------------
-	Window* window0 = new Window();
+	/// ------------- WINDOW_0 TEST -------------
+	Window* window0 = new Window("Test window!");
 	this->windows.push_back(window0);
 	/// ---- Title Widget ----
 	// Widget Definition
@@ -52,7 +56,46 @@ sf::RenderWindow* ImGuiManager::initialize()
 	// Add widget to window
 	window0->addWidget(titleW);
 	
-	/// --- Widget ---
+	/// ------------- WINDOW_1 INFORMATION -------------
+	Window* informationWindow = new Window("Information Window!");
+	this->windows.push_back(informationWindow);
+	/// ---- Mouse Coordinations Widget ----
+	// Widget Definition
+	DisplayText* infoW = new DisplayText();
+	// Behavior Definition
+	std::function<void(Widget*)> infoB = [](Widget* self) {
+		if (ImGui::IsMousePosValid()) {
+			// Display mouse coordinates related to window
+			ImVec2 mousePos = ImGui::GetIO().MousePos;
+			ImGui::Text(
+				"Coordinates related to window: (%.1f,%.1f)",
+				mousePos.x,
+				mousePos.y
+			);
+
+			// Display mouse coordinates related to world
+			sf::Vector2i otherFormatMousePos = mousePos;
+			sf::Vector2f pixelToCoords = Locator::getRenderWindow()->mapPixelToCoords(otherFormatMousePos);
+			ImGui::Text(
+				"Coordinates related to world: (%.1f,%.1f)",
+				pixelToCoords.x,
+				pixelToCoords.y
+			);
+
+			// Display where view's center is so that worldcoordinates are correct
+			sf::Vector2f centre = Locator::getRenderWindow()->getView().getCenter();
+			ImGui::Text(
+				"Center of the view: (%.1f,%.1f)",
+				centre.x,
+				centre.y
+			);
+		}
+	};
+	// Add behavior to widget
+	infoW->addBehavior(infoB);
+	informationWindow->addWidget(infoW);
+
+	/// ------------- WINDOW_2 INFORMATION -------------
 
 
 	return renderWindow;
@@ -68,6 +111,9 @@ void ImGuiManager::clean()
 	}
 	// Clear the vector
 	this->windows.clear();
+
+	// Clean MapRenderer
+	this->mapRenderer.clean();
 }
 
 void ImGuiManager::renderTEST()

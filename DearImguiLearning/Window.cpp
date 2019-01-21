@@ -1,8 +1,9 @@
 #include "Window.hpp"
 
-Window::Window()
+Window::Window(std::string title)
 {
-	this->initialize();
+	this->title = title;
+//	this->initialize();
 }
 
 Window::~Window()
@@ -31,7 +32,7 @@ void Window::addWidget(Widget * widget)
 void Window::iterate()
 {
 	// Begin window
-	ImGui::Begin("Sample Window");
+	ImGui::Begin(this->title.c_str());
 
 	for (auto & it : this->widgets) {
 		it->iterateBehaviors();

@@ -1,7 +1,7 @@
 #ifndef LOCATOR_HPP
 #define LOCATOR_HPP
 
-#include "iRenderWindow.hpp"
+#include "iRenderWindow.h"
 
 class Locator {
 private:

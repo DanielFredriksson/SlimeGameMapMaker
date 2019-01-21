@@ -15,7 +15,7 @@
 
 /// Locator
 #include "Locator.hpp"
-#include "RenderWindow.hpp"
+#include "RenderWindow.h"
 
 /// IMGUI-Manager
 #include "ImGuiManager.hpp"
@@ -51,8 +51,9 @@ int main()
 		// Render Map(SFML)
 		manager.renderTEST();
 		// Render ImGui
+	//	ImGui::ShowTestWindow();	// USED FOR TESTING!!!
 		ImGui::SFML::Render(*renderWindow);
-		//ImGui::ShowTestWindow(); USED FOR TESTING!!!
+		
 		// Display 
 		renderWindow->display();
 	}

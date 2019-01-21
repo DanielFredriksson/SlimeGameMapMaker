@@ -62,32 +62,38 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iRenderWindow.h">
+      <Filter>Header Files\Locator</Filter>
+    </ClInclude>
+    <ClInclude Include="Locator.hpp">
+      <Filter>Header Files\Locator</Filter>
+    </ClInclude>
+    <ClInclude Include="LocatorGuide.h">
+      <Filter>Header Files\Locator</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderWindow.h">
+      <Filter>Header Files\Locator</Filter>
+    </ClInclude>
     <ClInclude Include="ImGuiManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRenderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Widget.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="InputText.hpp">
       <Filter>Header Files\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="Locator.hpp">
-      <Filter>Header Files\Locator</Filter>
-    </ClInclude>
-    <ClInclude Include="LocatorGuide.hpp">
-      <Filter>Header Files\Locator</Filter>
-    </ClInclude>
-    <ClInclude Include="iRenderWindow.hpp">
-      <Filter>Header Files\Locator</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderWindow.hpp">
-      <Filter>Header Files\Locator</Filter>
-    </ClInclude>
-    <ClInclude Include="MapRenderer.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="DisplayText.hpp">
+      <Filter>Header Files\Widgets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
