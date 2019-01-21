@@ -70,6 +70,11 @@ void ImGuiManager::clean()
 	this->windows.clear();
 }
 
+void ImGuiManager::renderTEST()
+{
+	this->mapRenderer.renderGrid();
+}
+
 void ImGuiManager::updateWindows()
 {
 	// Per window...

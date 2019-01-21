@@ -44,6 +44,8 @@ public:
 	static ImGuiManager& getInstance();
 	sf::RenderWindow* initialize();
 	void clean();
+
+	void renderTEST();
 	
 	void updateWindows();
 	void processEvents(sf::RenderWindow &window);

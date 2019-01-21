@@ -1,7 +1,3 @@
-// DearImguiLearning.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-
 #include <iostream>
 #include <crtdbg.h>
 
@@ -34,7 +30,6 @@ int main()
 	// Initialize ImGuiManager, which sets up the ImGui as well as windows & widgets
 	ImGuiManager& manager = ImGuiManager::getInstance();
 	sf::RenderWindow* renderWindow = manager.initialize();
-	MapRenderer mapRenderer;
 
 	// If additional input to the widgets is needed, add one in the WidgetInput definition.
 	WidgetInput wInput;
@@ -54,7 +49,7 @@ int main()
 		// Clear
 		renderWindow->clear(wInput.bgColor); // fill background with color
 		// Render Map(SFML)
-		mapRenderer.renderGrid();
+		manager.renderTEST();
 		// Render ImGui
 		ImGui::SFML::Render(*renderWindow);
 		//ImGui::ShowTestWindow(); USED FOR TESTING!!!
