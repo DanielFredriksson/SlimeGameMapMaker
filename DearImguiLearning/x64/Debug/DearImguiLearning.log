@@ -1,2 +1,36 @@
-﻿  DearImguiLearning.cpp
-  DearImguiLearning.vcxproj -> C:\HobbyProjekt\SlimeGameMapMaker\x64\Debug\DearImguiLearning.exe
+﻿  ImGuiManager.cpp
+c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\maprenderer.hpp(52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\maprenderer.hpp(53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\maprenderer.hpp(55): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\maprenderer.hpp(133): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-master\imgui.h(168): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\imguimanager.cpp(82): note: see reference to function template instantiation 'ImVec2::operator sf::Vector2<int>(void) const<int>' being compiled
+  DearImguiLearning.vcxproj -> C:\Users\gaara\source\repos\DearImguiLearning\x64\Debug\DearImguiLearning.exe

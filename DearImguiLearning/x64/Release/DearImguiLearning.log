@@ -1,22 +1,22 @@
 ﻿  imgui.cpp
-c:\hobbyprojekt\slimegamemapmaker\imgui\imgui-master\imconfig.h(77): fatal error C1083: Cannot open include file: 'SFML/System/Vector2.hpp': No such file or directory
   imgui_demo.cpp
-c:\hobbyprojekt\slimegamemapmaker\imgui\imgui-master\imconfig.h(77): fatal error C1083: Cannot open include file: 'SFML/System/Vector2.hpp': No such file or directory
   imgui_draw.cpp
-c:\hobbyprojekt\slimegamemapmaker\imgui\imgui-master\imconfig.h(77): fatal error C1083: Cannot open include file: 'SFML/System/Vector2.hpp': No such file or directory
   imgui_widgets.cpp
-c:\hobbyprojekt\slimegamemapmaker\imgui\imgui-master\imconfig.h(77): fatal error C1083: Cannot open include file: 'SFML/System/Vector2.hpp': No such file or directory
   imgui-SFML.cpp
-c:\hobbyprojekt\slimegamemapmaker\imgui\imgui-sfml-master\imgui-sfml.h(4): fatal error C1083: Cannot open include file: 'SFML/System/Vector2.hpp': No such file or directory
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-sfml-master\imgui-sfml.cpp(417): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-sfml-master\imgui-sfml.cpp(489): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-sfml-master\imgui-sfml.cpp(505): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-sfml-master\imgui-sfml.cpp(697): warning C4312: 'type cast': conversion from 'unsigned int' to 'void *' of greater size
   DearImguiLearning.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\dearimguilearning.cpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   ImGuiManager.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\imguimanager.hpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+c:\users\gaara\source\repos\dearimguilearning\imgui\imgui-master\imgui.h(168): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  c:\users\gaara\source\repos\dearimguilearning\dearimguilearning\imguimanager.cpp(77): note: see reference to function template instantiation 'ImVec2::operator sf::Vector2<int>(void) const<int>' being compiled
   Locator.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\irenderwindow.hpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   MapRenderer.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\maprenderer.hpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Widget.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\widget.hpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Window.cpp
-c:\hobbyprojekt\slimegamemapmaker\dearimguilearning\window.hpp(5): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+LINK : fatal error LNK1181: cannot open input file 'sfml-window-d.lib'

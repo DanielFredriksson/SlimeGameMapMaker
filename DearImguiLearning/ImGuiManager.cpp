@@ -1,8 +1,13 @@
 #include "ImGuiManager.hpp"
 #include "Locator.hpp"
 
+
+/// WIDGETS
 #include "InputText.hpp"
 #include "DisplayText.hpp"
+
+/// TESTING
+#include <iostream>
 
 ImGuiManager::ImGuiManager()
 {
@@ -137,6 +142,20 @@ void ImGuiManager::processEvents(sf::RenderWindow &window)
 		ImGui::SFML::ProcessEvent(event);
 		if (event.type == sf::Event::Closed) {
 			window.close();
+		}
+		if (event.type == sf::Event::KeyPressed) {
+			sf::Event::KeyEvent().control;
+
+			sf::Vector2f mouseDelta;
+			mouseDelta.x = ImGui::GetIO().MouseWheel;
+			mouseDelta.y = ImGui::GetIO().MouseWheelH;
+			
+
+			std::cout << "MouseX: " << mouseDelta.x << ". MouseY: " << mouseDelta.y << std::endl;
+			std::cout << "MouseScrollDelta: " << sf::Event::KeyEvent().control << std::endl;
+
+			sf::View view = Locator::getRenderWindow()->getView();
+			view.move(mouseDelta);
 		}
 	}
 }

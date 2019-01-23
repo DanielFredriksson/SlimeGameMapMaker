@@ -39,21 +39,55 @@ private:
 		Locator::getRenderWindow()->draw(line);
 	}
 
-	void drawSquare(sf::Vector2i tiles) {
+	void drawSquares() {
+
+	}
+
+	void drawSquare(sf::Vector2i origin, float length) {
 		sf::Vector2f currentLinesOrigin;
 		sf::Vector2f centre = Locator::getRenderWindow()->getView().getCenter();
 
-		// Where is the origin?
-		// Make it, Flip it.
-		// Render it.
+		// Cartesian coordinates
+		sf::Vector2f cartPoints[4] = {
+			sf::Vector2f(origin.x, origin.y),
+			sf::Vector2f(origin.x + length, origin.y),
+			sf::Vector2f(origin.x + length, origin.y + length),
+			sf::Vector2f(origin.x, origin.y + length)
+		};
+		/*sf::Vector2f cartPoints[4] = {
+			sf::Vector2f(25.0f, 25.0f),
+			sf::Vector2f(30.0f, 25.0f),
+			sf::Vector2f(30.0f, 30.0f),
+			sf::Vector2f(25.0f, 30.0f)
+		};*/
+		sf::Vector2f isoPoints[4] = {
+				toIsometric(cartPoints[0]),
+				toIsometric(cartPoints[1]),
+				toIsometric(cartPoints[2]),
+				toIsometric(cartPoints[3]),
+		};
 
-		for (int x = 0; x < tiles.x; x++) {
-			for (int y = 0; y < tiles.y; y++) {
-				currentLinesOrigin.x = centre.x + (x * this->tileSize);
-				currentLinesOrigin.y = centre.y + (y * this->tileSize);
-				this->drawLine(currentLinesOrigin);
-			}
+		for (int i = 0; i < 4; i++) {
+			isoPoints[i].x += 50;
+			isoPoints[i].y += 50;
 		}
+
+		sf::Vertex lines[8] = {
+			sf::Vertex(isoPoints[0], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[1], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[1], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[2], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[2], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[3], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[3], sf::Color::White, sf::Vector2f(0,0)),
+			sf::Vertex(isoPoints[0], sf::Color::White, sf::Vector2f(0,0))
+		};
+		Locator::getRenderWindow()->draw(lines, 8, sf::Lines);
+
+
+
+
+
 	}
 
 
@@ -82,17 +116,23 @@ public:
 	}
 
 	void renderGrid() {
-		sf::Vector2i tileCount{
+		sf::Vector2i origin{
 			10,	// Number of x-tiles
 			10	// Number of y-tiles
 		};
+		int length = 10;
+		int size = 15;
+
+	//	this->drawSquare(origin, length);
 
 
-
-		sf::Vector2f center = this->view->getCenter();
-		this->drawSquare(tileCount);
-
-		//this->drawSquare(5, 5);
+		for (int x = 0; x < size; x++) {
+			for (int y = 0; y < size; y++) {
+				origin.x = 25 + x * length;
+				origin.y = 25 + y * length;
+				this->drawSquare(origin, length);
+			}
+		}
 	}
 
 };
