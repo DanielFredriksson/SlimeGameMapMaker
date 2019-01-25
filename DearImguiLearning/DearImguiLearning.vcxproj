@@ -183,7 +183,8 @@
     <ClInclude Include="iRenderWindow.h" />
     <ClInclude Include="Locator.hpp" />
     <ClInclude Include="LocatorGuide.h" />
-    <ClInclude Include="MapRenderer.hpp" />
+    <ClInclude Include="MapRenderer.h" />
+    <ClInclude Include="NonTitledGridManager.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="Widget.hpp" />
     <ClInclude Include="Window.hpp" />

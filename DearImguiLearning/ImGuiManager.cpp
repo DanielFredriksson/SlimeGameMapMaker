@@ -94,6 +94,7 @@ sf::RenderWindow* ImGuiManager::initialize()
 				centre.x,
 				centre.y
 			);
+
 		}
 	};
 	// Add behavior to widget
@@ -135,27 +136,35 @@ void ImGuiManager::updateWindows()
 	}
 }
 
+void ImGuiManager::processInput()
+{
+	/*
+	Can probably be made more efficient using arrays rather than if-cases
+	*/
+	sf::Vector2i newMousePos = sf::Mouse::getPosition();
+	this->deltaMousePos = newMousePos - this->oldMousePos;
+	this->oldMousePos = newMousePos;
+
+	/// ------------ CAMERA MOVEMENT ------------
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LControl) &&
+		sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) 
+	{
+		sf::View view = Locator::getRenderWindow()->getView();	// Get old view,
+		view.move(sf::Vector2f((-1) * this->deltaMousePos));	// make changes to it,
+		Locator::getRenderWindow()->setView(view);				// set it as new view
+		std::cout << this->deltaMousePos.x << " " << this->deltaMousePos.y << std::endl;
+	}
+	sf::View testView = Locator::getRenderWindow()->getView();
+}
+
 void ImGuiManager::processEvents(sf::RenderWindow &window)
 {
 	sf::Event event;
+
 	while (window.pollEvent(event)) {
 		ImGui::SFML::ProcessEvent(event);
 		if (event.type == sf::Event::Closed) {
 			window.close();
-		}
-		if (event.type == sf::Event::KeyPressed) {
-			sf::Event::KeyEvent().control;
-
-			sf::Vector2f mouseDelta;
-			mouseDelta.x = ImGui::GetIO().MouseWheel;
-			mouseDelta.y = ImGui::GetIO().MouseWheelH;
-			
-
-			std::cout << "MouseX: " << mouseDelta.x << ". MouseY: " << mouseDelta.y << std::endl;
-			std::cout << "MouseScrollDelta: " << sf::Event::KeyEvent().control << std::endl;
-
-			sf::View view = Locator::getRenderWindow()->getView();
-			view.move(mouseDelta);
 		}
 	}
 }

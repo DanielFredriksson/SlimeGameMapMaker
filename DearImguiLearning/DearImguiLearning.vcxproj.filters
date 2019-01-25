@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Locator">
       <UniqueIdentifier>{9b41cacc-38ff-4af7-a4b0-92f471e62f8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\MapRenderer">
+      <UniqueIdentifier>{c84e93e6-f0bd-4df2-a75a-dd6d6dbe515c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MapRenderer">
+      <UniqueIdentifier>{1cac7f7e-a0ed-4363-acd0-d6ff027c2038}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DearImguiLearning.cpp">
@@ -58,7 +64,7 @@
       <Filter>Source Files\Locator</Filter>
     </ClCompile>
     <ClCompile Include="MapRenderer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MapRenderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,9 +86,6 @@
     <ClInclude Include="ImGuiManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MapRenderer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -94,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="DisplayText.hpp">
       <Filter>Header Files\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="NonTitledGridManager.h">
+      <Filter>Header Files\MapRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRenderer.h">
+      <Filter>Header Files\MapRenderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

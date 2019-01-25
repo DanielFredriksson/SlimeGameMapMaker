@@ -12,7 +12,7 @@
 
 #include "Window.hpp"
 #include <vector>
-#include "MapRenderer.hpp"
+#include "MapRenderer.h"
 
 /*
 This struct is used to simplify input to widgets. Widgets need references so that
@@ -26,6 +26,26 @@ struct WidgetInput {
 	char windowTitle[255] = "ImGui + SFML = <3";
 };
 
+namespace SOUND {
+	namespace POOP {
+		enum PLAYER {
+			ATTACK, DIE, COUNT
+		};
+	}
+	namespace WATER {
+
+	}
+}
+
+enum BigListOfSounds {
+	SOUND1, SOUND2, PLAYERATTACK, PLAYERDIE, COUNT
+};
+
+void playSound(SOUND::POOP enumerator) {
+	enumerator;
+};
+
+
 /*
 The ImGuiManager simplifies the usage of ImGui-windows by keeping everything in
 one, beautifully decoupled, class.
@@ -36,6 +56,8 @@ private:
 	// Like an 'InternalWindow' class which keeps track of it's widgets and whatnot.
 	std::vector<Window*> windows;
 	MapRenderer mapRenderer;
+	sf::Vector2i oldMousePos = { 0, 0 };
+	sf::Vector2i deltaMousePos = { 0, 0 };
 
 public:
 	ImGuiManager();
@@ -45,12 +67,18 @@ public:
 	sf::RenderWindow* initialize();
 	void clean();
 
+	void function()
+
 	void renderTEST();
 	
 	void updateWindows();
+	void processInput();
 	void processEvents(sf::RenderWindow &window);
 	void updateState(sf::RenderWindow &window, sf::Clock &deltaClock);
 	void updateWidgets(sf::RenderWindow &window, WidgetInput& wInput);
+
+
+	
 };
 
 

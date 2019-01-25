@@ -22,7 +22,7 @@
 #include "Window.hpp"
 
 // TESTING
-#include "MapRenderer.hpp"
+#include "MapRenderer.h"
 
 int main()
 {
@@ -38,6 +38,8 @@ int main()
 	sf::Clock deltaClock;
 	while (renderWindow->isOpen()) {
 		/// -- UPDATING --
+		// Process Input
+		manager.processInput();
 		// Process Events
 		manager.processEvents(*renderWindow);
 		// Update State
