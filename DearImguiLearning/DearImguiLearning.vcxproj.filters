@@ -66,6 +66,9 @@
     <ClCompile Include="MapRenderer.cpp">
       <Filter>Source Files\MapRenderer</Filter>
     </ClCompile>
+    <ClCompile Include="NonTiledGridManager.cpp">
+      <Filter>Source Files\Locator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.hpp">
@@ -98,10 +101,10 @@
     <ClInclude Include="DisplayText.hpp">
       <Filter>Header Files\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="NonTitledGridManager.h">
+    <ClInclude Include="MapRenderer.h">
       <Filter>Header Files\MapRenderer</Filter>
     </ClInclude>
-    <ClInclude Include="MapRenderer.h">
+    <ClInclude Include="NonTiledGridManager.h">
       <Filter>Header Files\MapRenderer</Filter>
     </ClInclude>
   </ItemGroup>

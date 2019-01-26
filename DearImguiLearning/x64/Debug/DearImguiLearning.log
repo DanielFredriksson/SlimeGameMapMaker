@@ -1,5 +1,4 @@
 ﻿  DearImguiLearning.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\dearimguilearning.cpp(25): fatal error C1083: Cannot open include file: 'MapRenderer.hpp': No such file or directory
   ImGuiManager.cpp
 c:\hobbyd\slimegamemapmaker\imgui\imgui-master\imgui.h(168): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
           with
@@ -8,59 +7,7 @@ c:\hobbyd\slimegamemapmaker\imgui\imgui-master\imgui.h(168): warning C4244: 'arg
           ]
   c:\hobbyd\slimegamemapmaker\dearimguilearning\imguimanager.cpp(82): note: see reference to function template instantiation 'ImVec2::operator sf::Vector2<int>(void) const<int>' being compiled
   MapRenderer.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(76): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(256): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(257): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(259): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(329): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  NonTiledGridManager.cpp
   Generating Code...
+  DearImguiLearning.vcxproj -> C:\HobbyD\SlimeGameMapMaker\x64\Debug\DearImguiLearning.exe

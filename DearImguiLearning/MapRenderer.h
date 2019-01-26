@@ -6,6 +6,9 @@
 #include "SFML/Audio.hpp"
 #include "SFML/System.hpp"
 
+/// INTERNAL
+#include "NonTiledGridManager.h"
+
 // TESTING
 #include <iostream>
 
@@ -13,6 +16,7 @@
 
 class MapRenderer : public sf::Drawable {
 private:
+	NonTiledGridManager nonTiledManager;
 	sf::Sprite *sprite = nullptr;
 	sf::Texture *texture = nullptr;
 	sf::View *view = nullptr;
@@ -20,15 +24,8 @@ private:
 	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 	int tileSize = 10;
 
-	sf::Vector2f toIsometric(sf::Vector2f vector);
-	sf::Vector2f normalize(sf::Vector2f vector);
-
+	void initializeView(sf::RenderWindow *renderWindow);
 	void drawLine(sf::Vector2f origin);
-
-	void drawNonTiledGrid(sf::Vector2i tileCounts, float tileSize, sf::Vector2i origin);
-
-	void drawSquare(sf::Vector2i origin, float length);
-
 
 public:
 	MapRenderer();

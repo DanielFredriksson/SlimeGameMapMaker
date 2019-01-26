@@ -5,28 +5,62 @@
 #include "SFML/Audio.hpp"
 #include "SFML/System.hpp"
 
+#include "Locator.hpp"
+
 NonTiledGridManager::NonTiledGridManager()
 {
-	this->initialize();
 }
 
 NonTiledGridManager::~NonTiledGridManager()
 {
-
 }
 
-void NonTiledGridManager::initialize()
+void NonTiledGridManager::initialize(sf::Vector2i gridSize, sf::Vector2f origin, float tileSize)
 {
+	this->tileCounts = gridSize;
+	this->origin = origin;
+	this->tileSize = tileSize;
+
+	this->generateGrid();
 }
 
 void NonTiledGridManager::clean()
 {
+	delete this->vertices;
 }
 
-void NonTiledGridManager::drawNonTiledGrid()
+sf::Vector2f NonTiledGridManager::toIsometric(sf::Vector2f vector)
 {
+	return sf::Vector2f{
+		vector.x - vector.y,
+		(vector.x + vector.y) * 0.5f
+	};
+}
+
+sf::Vector2f NonTiledGridManager::normalize(sf::Vector2f vector)
+{
+	/* OPTIMIZATION:
+	- Can be made faster by approximating 1/abs rather than calculating perfectly
+	*/
+
+	float length = (vector.x * vector.x) + (vector.y * vector.y);
+	float abs = sqrt(length);
+	float divider = 1 / abs;
+
+	return sf::Vector2f{
+		vector.x * divider,
+		vector.y * divider
+	};
+}
+
+void NonTiledGridManager::generateGrid()
+{
+	sf::Vector2f origin = this->origin;
+	sf::Vector2i tileCounts = this->tileCounts;
+	float tileSize = this->tileSize;
+
 	/// ---------------- CONVERTING FROM CARTESIAN INTO ISOMETRIC ----------------
-// Cartesian Corners
+	// Cartesian Corners
 	sf::Vector2f cartCorners[4] = {
 		sf::Vector2f(origin.x, origin.y),															// North
 		sf::Vector2f(origin.x + (tileCounts.x * tileSize), origin.y),								// East
@@ -35,10 +69,10 @@ void NonTiledGridManager::drawNonTiledGrid()
 	};
 	// Isometric Corners
 	sf::Vector2f isoCorners[4] = {
-		toIsometric(cartCorners[0]),	// North
-		toIsometric(cartCorners[1]),	// East
-		toIsometric(cartCorners[2]),	// South
-		toIsometric(cartCorners[3])		// West
+		this->toIsometric(cartCorners[0]),	// North
+		this->toIsometric(cartCorners[1]),	// East
+		this->toIsometric(cartCorners[2]),	// South
+		this->toIsometric(cartCorners[3])	// West
 	};
 
 	/// ---------------- BUILDING VECTORS FOR OPTIMIZATION ----------------
@@ -100,15 +134,28 @@ void NonTiledGridManager::drawNonTiledGrid()
 	int addedSoFar = 0;
 	// Add SouthEast to the VertexArray
 	for (int i = 0; i < lineCount[DIRECTION::SOUTHEAST]; i++) {
-		vertices[addedSoFar++] = sf::Vertex(southEastLinesStart[i], sf::Color::Red);
-		vertices[addedSoFar++] = sf::Vertex(southEastLinesFinish[i], sf::Color::Red);
+		vertices[addedSoFar++] = sf::Vertex(southEastLinesStart[i], sf::Color::White);
+		vertices[addedSoFar++] = sf::Vertex(southEastLinesFinish[i], sf::Color::White);
 	}
 	// Add SouthWest to the VertexArray
 	for (int i = 0; i < lineCount[DIRECTION::SOUTHWEST]; i++) {
-		vertices[addedSoFar++] = sf::Vertex(southWestLinesStart[i], sf::Color::Blue);
-		vertices[addedSoFar++] = sf::Vertex(southWestLinesFinish[i], sf::Color::Blue);
+		vertices[addedSoFar++] = sf::Vertex(southWestLinesStart[i], sf::Color::White);
+		vertices[addedSoFar++] = sf::Vertex(southWestLinesFinish[i], sf::Color::White);
 	}
+	// Save the processed data!
+	this->vertices = vertices;
+	this->verticeCount = totalPointsCount;
 
+	/// ---------------- CLEAN DYNAMICALLY ALLOCATED OBJECTS ----------------
+	delete southEastLinesStart;
+	delete southEastLinesFinish;
+	delete southWestLinesStart;
+	delete southWestLinesFinish;
+}
+
+
+void NonTiledGridManager::drawNonTiledGrid()
+{
 	/// ---------------- DRAW VERTICES ----------------
-	Locator::getRenderWindow()->draw(vertices, totalPointsCount, sf::Lines);
+	Locator::getRenderWindow()->draw(vertices, this->verticeCount, sf::Lines);
 }

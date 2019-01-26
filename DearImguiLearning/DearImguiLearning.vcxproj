@@ -172,6 +172,7 @@
     <ClCompile Include="ImGuiManager.cpp" />
     <ClCompile Include="Locator.cpp" />
     <ClCompile Include="MapRenderer.cpp" />
+    <ClCompile Include="NonTiledGridManager.cpp" />
     <ClCompile Include="Widget.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -184,7 +185,7 @@
     <ClInclude Include="Locator.hpp" />
     <ClInclude Include="LocatorGuide.h" />
     <ClInclude Include="MapRenderer.h" />
-    <ClInclude Include="NonTitledGridManager.h" />
+    <ClInclude Include="NonTiledGridManager.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="Widget.hpp" />
     <ClInclude Include="Window.hpp" />

@@ -26,26 +26,6 @@ struct WidgetInput {
 	char windowTitle[255] = "ImGui + SFML = <3";
 };
 
-namespace SOUND {
-	namespace POOP {
-		enum PLAYER {
-			ATTACK, DIE, COUNT
-		};
-	}
-	namespace WATER {
-
-	}
-}
-
-enum BigListOfSounds {
-	SOUND1, SOUND2, PLAYERATTACK, PLAYERDIE, COUNT
-};
-
-void playSound(SOUND::POOP enumerator) {
-	enumerator;
-};
-
-
 /*
 The ImGuiManager simplifies the usage of ImGui-windows by keeping everything in
 one, beautifully decoupled, class.
@@ -66,8 +46,6 @@ public:
 	static ImGuiManager& getInstance();
 	sf::RenderWindow* initialize();
 	void clean();
-
-	void function()
 
 	void renderTEST();
 	
