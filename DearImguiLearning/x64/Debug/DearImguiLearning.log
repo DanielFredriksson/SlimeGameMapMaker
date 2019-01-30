@@ -1,13 +1,32 @@
-﻿  DearImguiLearning.cpp
-  ImGuiManager.cpp
-c:\hobbyd\slimegamemapmaker\imgui\imgui-master\imgui.h(168): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-  c:\hobbyd\slimegamemapmaker\dearimguilearning\imguimanager.cpp(82): note: see reference to function template instantiation 'ImVec2::operator sf::Vector2<int>(void) const<int>' being compiled
-  MapRenderer.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(203): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  NonTiledGridManager.cpp
+﻿  Camera.cpp
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(11): warning C4099: 'Storage': type name first seen using 'class' now seen using 'struct'
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(11): note: see declaration of 'Storage'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+  ZoomStateMax.cpp
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+  ZoomStateMid.cpp
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+  ZoomStateMin.cpp
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
   Generating Code...
   DearImguiLearning.vcxproj -> C:\HobbyD\SlimeGameMapMaker\x64\Debug\DearImguiLearning.exe

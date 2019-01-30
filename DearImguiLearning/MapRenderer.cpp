@@ -80,5 +80,10 @@ void MapRenderer::clean()
 
 void MapRenderer::renderGrid() 
 {
+	this->gridManager.test();
+}
+
+void MapRenderer::renderNonTiledGrid()
+{
 	this->nonTiledManager.drawNonTiledGrid();
 }

@@ -18,22 +18,30 @@ struct SFMLData {
 	sf::Sprite sprite;
 };
 
-class Tile {
+class Tile : public sf::Drawable {
 private:
 	// Contains all relevant SFML data
 	SFMLData sfData;
+
 	// Contains all data about which static objects reside on it.
 	/// std::vector<staticObjectClass*> occupants;
+
 	// Contains all data about which dynamic objects reside on it.
 	/// std::vector<dynamicObjectClass*> occupants;
+
 	// Contains wether the player is on the tile or not.
 	/// bool isPlayerOn?
+
 	// Contains all data about this tile's position in the world.
 	/// worldData wData;
 
 public:
 	Tile();
 	~Tile();
+	void initialize(std::string texturePath, sf::Vector2f position);
+	void clean();
+
+	void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 
 

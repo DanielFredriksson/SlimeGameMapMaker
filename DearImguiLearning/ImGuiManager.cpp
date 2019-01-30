@@ -124,6 +124,7 @@ void ImGuiManager::clean()
 
 void ImGuiManager::renderTEST()
 {
+	this->mapRenderer.renderNonTiledGrid();
 	this->mapRenderer.renderGrid();
 }
 
@@ -145,16 +146,19 @@ void ImGuiManager::processInput()
 	this->deltaMousePos = newMousePos - this->oldMousePos;
 	this->oldMousePos = newMousePos;
 
-	/// ------------ CAMERA MOVEMENT ------------
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LControl) &&
-		sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) 
+	/// ------------ CAMERA ------------
+	// Camera Movement
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) ||
+		sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
 	{
-		sf::View view = Locator::getRenderWindow()->getView();	// Get old view,
-		view.move(sf::Vector2f((-1) * this->deltaMousePos));	// make changes to it,
-		Locator::getRenderWindow()->setView(view);				// set it as new view
-		std::cout << this->deltaMousePos.x << " " << this->deltaMousePos.y << std::endl;
+		this->camera.move(this->deltaMousePos);
 	}
-	sf::View testView = Locator::getRenderWindow()->getView();
+	// Camera Zoom
+	//if (sf::Mouse::isButtonPressed(sf::Mouse::Wheel::VerticalWheel)) {
+	//	sf::View view = Locator::getRenderWindow()->getView();
+	//	view.zoom(1.01f);
+	//}
+
 }
 
 void ImGuiManager::processEvents(sf::RenderWindow &window)
@@ -165,6 +169,18 @@ void ImGuiManager::processEvents(sf::RenderWindow &window)
 		ImGui::SFML::ProcessEvent(event);
 		if (event.type == sf::Event::Closed) {
 			window.close();
+		}
+
+		if (event.type == sf::Event::MouseWheelScrolled) {
+			if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
+
+				if (event.mouseWheelScroll.delta > 0) {
+					this->camera.zoomIn();
+				}
+				else {
+					this->camera.zoomOut();
+				}
+			}
 		}
 	}
 }

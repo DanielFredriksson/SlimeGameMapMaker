@@ -168,17 +168,30 @@
     <ClCompile Include="..\Imgui\imgui-master\imgui_draw.cpp" />
     <ClCompile Include="..\Imgui\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="..\Imgui\imgui-sfml-master\imgui-SFML.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DearImguiLearning.cpp" />
+    <ClCompile Include="GlobalSettings.cpp" />
+    <ClCompile Include="GridManager.cpp" />
     <ClCompile Include="ImGuiManager.cpp" />
     <ClCompile Include="Locator.cpp" />
     <ClCompile Include="MapRenderer.cpp" />
     <ClCompile Include="NonTiledGridManager.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Widget.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="ZoomStateMax.cpp" />
+    <ClCompile Include="ZoomStateMid.cpp" />
+    <ClCompile Include="ZoomStateMin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="ZoomState.h" />
+    <ClInclude Include="ZoomStateMax.h" />
+    <ClInclude Include="ZoomStateMid.h" />
+    <ClInclude Include="ZoomStateMin.h" />
     <ClInclude Include="DisplayText.hpp" />
+    <ClInclude Include="GlobalSettings.h" />
+    <ClInclude Include="GridManager.h" />
     <ClInclude Include="ImGuiManager.hpp" />
     <ClInclude Include="InputText.hpp" />
     <ClInclude Include="iRenderWindow.h" />
@@ -187,6 +200,7 @@
     <ClInclude Include="MapRenderer.h" />
     <ClInclude Include="NonTiledGridManager.h" />
     <ClInclude Include="RenderWindow.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Widget.hpp" />
     <ClInclude Include="Window.hpp" />
   </ItemGroup>

@@ -1,6 +1,14 @@
 #ifndef IMGUIMANAGER_HPP
 #define IMGUIMANAGER_HPP
 
+/// EXTERNAL
+#include <vector>
+
+/// INTERNAL
+#include "Window.hpp"
+#include "MapRenderer.h"
+#include "Camera.hpp"
+
 /// SFML
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
@@ -10,9 +18,6 @@
 #include "imgui.h"
 #include "../imgui-sfml-master/imgui-SFML.h"
 
-#include "Window.hpp"
-#include <vector>
-#include "MapRenderer.h"
 
 /*
 This struct is used to simplify input to widgets. Widgets need references so that
@@ -32,10 +37,11 @@ one, beautifully decoupled, class.
 */
 class ImGuiManager {
 private:
-	// Something that contains internal-windows + widget information.
-	// Like an 'InternalWindow' class which keeps track of it's widgets and whatnot.
 	std::vector<Window*> windows;
+
 	MapRenderer mapRenderer;
+	Camera camera;
+
 	sf::Vector2i oldMousePos = { 0, 0 };
 	sf::Vector2i deltaMousePos = { 0, 0 };
 

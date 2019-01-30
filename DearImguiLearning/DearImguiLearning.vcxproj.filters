@@ -13,23 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Imgui">
-      <UniqueIdentifier>{64f93334-3c1c-466b-90e9-d868c7f0affe}</UniqueIdentifier>
+    <Filter Include="Source Files\Camera %28CPP%29">
+      <UniqueIdentifier>{95b24d42-e48f-428b-abc2-4efa25917813}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Widgets">
-      <UniqueIdentifier>{ae8375f9-86a0-4b31-b7f8-9fd5e223f86e}</UniqueIdentifier>
+    <Filter Include="Source Files\MapRenderer %28CPP%29">
+      <UniqueIdentifier>{1cac7f7e-a0ed-4363-acd0-d6ff027c2038}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Locator">
-      <UniqueIdentifier>{488d2b12-3bc7-4fd0-a8ea-86ddb0a2e8a8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Locator">
+    <Filter Include="Source Files\Locator %28CPP%29">
       <UniqueIdentifier>{9b41cacc-38ff-4af7-a4b0-92f471e62f8f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\MapRenderer">
+    <Filter Include="Source Files\Imgui %28CPP%29">
+      <UniqueIdentifier>{64f93334-3c1c-466b-90e9-d868c7f0affe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Widgets %28HPP%29">
+      <UniqueIdentifier>{ae8375f9-86a0-4b31-b7f8-9fd5e223f86e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera %28HPP%29">
+      <UniqueIdentifier>{478d7ab2-2444-4e83-bf84-189affa8051a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera %28HPP%29\ZoomStates %28HPP%29">
+      <UniqueIdentifier>{dcd78617-e1b3-4be9-b87b-894d94fe03ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MapRenderer %28HPP%29">
       <UniqueIdentifier>{c84e93e6-f0bd-4df2-a75a-dd6d6dbe515c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\MapRenderer">
-      <UniqueIdentifier>{1cac7f7e-a0ed-4363-acd0-d6ff027c2038}</UniqueIdentifier>
+    <Filter Include="Header Files\Locator %28HPP%29">
+      <UniqueIdentifier>{488d2b12-3bc7-4fd0-a8ea-86ddb0a2e8a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Camera %28CPP%29\ZoomStates %28CPP%29">
+      <UniqueIdentifier>{764188f5-1e50-4a40-8050-0ffe962949a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,19 +49,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Imgui\imgui-master\imgui.cpp">
-      <Filter>Source Files\Imgui</Filter>
+      <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="..\Imgui\imgui-master\imgui_draw.cpp">
-      <Filter>Source Files\Imgui</Filter>
+      <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="..\Imgui\imgui-master\imgui_widgets.cpp">
-      <Filter>Source Files\Imgui</Filter>
+      <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="..\Imgui\imgui-master\imgui_demo.cpp">
-      <Filter>Source Files\Imgui</Filter>
+      <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="..\Imgui\imgui-sfml-master\imgui-SFML.cpp">
-      <Filter>Source Files\Imgui</Filter>
+      <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="ImGuiManager.cpp">
       <Filter>Source Files</Filter>
@@ -61,30 +73,48 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Locator.cpp">
-      <Filter>Source Files\Locator</Filter>
+      <Filter>Source Files\Locator %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="MapRenderer.cpp">
-      <Filter>Source Files\MapRenderer</Filter>
+      <Filter>Source Files\MapRenderer %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="GridManager.cpp">
+      <Filter>Source Files\MapRenderer %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\MapRenderer %28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="NonTiledGridManager.cpp">
-      <Filter>Source Files\Locator</Filter>
+      <Filter>Source Files\MapRenderer %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Camera %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoomStateMax.cpp">
+      <Filter>Source Files\Camera %28CPP%29\ZoomStates %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoomStateMid.cpp">
+      <Filter>Source Files\Camera %28CPP%29\ZoomStates %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoomStateMin.cpp">
+      <Filter>Source Files\Camera %28CPP%29\ZoomStates %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalSettings.cpp">
+      <Filter>Source Files\Locator %28CPP%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="iRenderWindow.h">
-      <Filter>Header Files\Locator</Filter>
+      <Filter>Header Files\Locator %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="Locator.hpp">
-      <Filter>Header Files\Locator</Filter>
+      <Filter>Header Files\Locator %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="LocatorGuide.h">
-      <Filter>Header Files\Locator</Filter>
+      <Filter>Header Files\Locator %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="RenderWindow.h">
-      <Filter>Header Files\Locator</Filter>
+      <Filter>Header Files\Locator %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="ImGuiManager.hpp">
       <Filter>Header Files</Filter>
@@ -93,19 +123,43 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Widget.hpp">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Header Files\Widgets %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="InputText.hpp">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Header Files\Widgets %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="DisplayText.hpp">
-      <Filter>Header Files\Widgets</Filter>
+      <Filter>Header Files\Widgets %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="MapRenderer.h">
-      <Filter>Header Files\MapRenderer</Filter>
+      <Filter>Header Files\MapRenderer %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="NonTiledGridManager.h">
-      <Filter>Header Files\MapRenderer</Filter>
+      <Filter>Header Files\MapRenderer %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="GridManager.h">
+      <Filter>Header Files\MapRenderer %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\MapRenderer %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.hpp">
+      <Filter>Header Files\Camera %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalSettings.h">
+      <Filter>Header Files\Locator %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomStateMin.h">
+      <Filter>Header Files\Camera %28HPP%29\ZoomStates %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomStateMid.h">
+      <Filter>Header Files\Camera %28HPP%29\ZoomStates %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomStateMax.h">
+      <Filter>Header Files\Camera %28HPP%29\ZoomStates %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoomState.h">
+      <Filter>Header Files\Camera %28HPP%29\ZoomStates %28HPP%29</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
