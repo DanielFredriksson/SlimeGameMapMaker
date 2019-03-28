@@ -16,9 +16,12 @@ private:
 	// Contains States
 	Storage* storage;
 
-	// Modified by states: 
+	// Modified by the states: 
 	ZoomState* zoomState;
 	int currentZoom;
+
+	// Initialized via locator
+	float scrollSpeed;
 
 public:
 	Camera();

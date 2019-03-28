@@ -27,6 +27,7 @@
 int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
 	// Initialize ImGuiManager, which sets up the ImGui as well as windows & widgets
 	ImGuiManager& manager = ImGuiManager::getInstance();
 	sf::RenderWindow* renderWindow = manager.initialize();

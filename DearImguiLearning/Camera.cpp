@@ -19,6 +19,7 @@ void Camera::initialize()
 {
 	//
 	this->currentZoom = 0.0;
+	this->scrollSpeed = (*Locator::getSettings())->getCameraSettings()->scrollSpeed;
 
 	// Initialize Storage
 	this->storage = new Storage;
@@ -35,14 +36,15 @@ void Camera::clean()
 	// Clean Storage
 	this->storage->clean();
 	delete this->storage;
-
-	// Clean zoomState not needed
 }
 
 void Camera::move(sf::Vector2i deltaMousePos)
 {
 	sf::View view = (*Locator::getRenderWindow())->getView();	// Get old view,
-	view.move(sf::Vector2f((-1) * deltaMousePos));			// make changes to it,
+	view.move(sf::Vector2f(										// make changes to it,
+		(-1) * deltaMousePos.x * this->scrollSpeed,
+		(-1) * deltaMousePos.y * this->scrollSpeed
+	));			
 	(*Locator::getRenderWindow())->setView(view);				// set it as new view
 }
 

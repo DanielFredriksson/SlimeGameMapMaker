@@ -123,6 +123,10 @@ void ImGuiManager::clean()
 
 	// Clean MapRenderer
 	this->mapRenderer.clean();
+
+	// Clean the camera
+	this->camera->clean();
+	delete this->camera;
 }
 
 void ImGuiManager::renderTEST()
@@ -150,11 +154,14 @@ void ImGuiManager::processInput()
 	this->oldMousePos = newMousePos;
 
 	/// ------------ CAMERA ------------
+	/*if (sf::Mouse::isButtonPressed(sf::Mouse::Button::)) {
+		int asdf = 3;
+	}*/
 	// Camera Movement
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) ||
-		sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) &&
+		sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
-		this->camera->move(this->deltaMousePos);
+   		this->camera->move(this->deltaMousePos);
 	}
 
 }
