@@ -5,7 +5,7 @@
 class ZoomStateMid : public ZoomState {
 private:
 public:
-	ZoomStateMid(ZoomState *pZoomState);
+	ZoomStateMid(const Storage* pStorage, ZoomState** paZoomState, int* pZoom);
 	~ZoomStateMid();
 
 	void zoomIn();

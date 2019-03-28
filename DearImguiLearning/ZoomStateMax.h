@@ -5,7 +5,7 @@
 class ZoomStateMax : public ZoomState {
 private:
 public:
-	ZoomStateMax(ZoomState *pZoomState);
+	ZoomStateMax(const Storage* pStorage, ZoomState** pZoomState, int* pZoom);
 	~ZoomStateMax();
 
 	void zoomIn();

@@ -33,7 +33,7 @@ int main()
 
 	// If additional input to the widgets is needed, add one in the WidgetInput definition.
 	WidgetInput wInput;
-	Locator::getRenderWindow()->setTitle(wInput.windowTitle);
+	(*Locator::getRenderWindow())->setTitle(wInput.windowTitle);
 
 	sf::Clock deltaClock;
 	while (renderWindow->isOpen()) {

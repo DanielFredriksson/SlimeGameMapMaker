@@ -157,5 +157,5 @@ void NonTiledGridManager::generateGrid()
 void NonTiledGridManager::drawNonTiledGrid()
 {
 	/// ---------------- DRAW VERTICES ----------------
-	Locator::getRenderWindow()->draw(vertices, this->verticeCount, sf::Lines);
+	(*Locator::getRenderWindow())->draw(vertices, this->verticeCount, sf::Lines);
 }

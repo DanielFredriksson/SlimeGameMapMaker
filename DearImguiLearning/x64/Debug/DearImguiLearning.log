@@ -1,19 +1,13 @@
-﻿  Camera.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(11): warning C4099: 'Storage': type name first seen using 'class' now seen using 'struct'
-  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(11): note: see declaration of 'Storage'
+﻿  ZoomStateMax.cpp
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
-  ZoomStateMax.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
-  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
-c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: deletion of pointer to incomplete type 'ZoomStateMid'; no destructor called
-  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
-c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
-  c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(50): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstatemax.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   ZoomStateMid.cpp
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
@@ -21,6 +15,10 @@ c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: de
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(50): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstatemid.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstatemid.cpp(28): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   ZoomStateMin.cpp
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(16): warning C4150: deletion of pointer to incomplete type 'ZoomStateMax'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(8): note: see declaration of 'ZoomStateMax'
@@ -28,5 +26,8 @@ c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(17): warning C4150: de
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(9): note: see declaration of 'ZoomStateMid'
 c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(18): warning C4150: deletion of pointer to incomplete type 'ZoomStateMin'; no destructor called
   c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(10): note: see declaration of 'ZoomStateMin'
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstate.h(50): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+c:\hobbyd\slimegamemapmaker\dearimguilearning\zoomstatemin.cpp(20): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   Generating Code...
   DearImguiLearning.vcxproj -> C:\HobbyD\SlimeGameMapMaker\x64\Debug\DearImguiLearning.exe

@@ -12,6 +12,7 @@
 ImGuiManager::ImGuiManager()
 {
 	//this->initialize();
+	Locator::provide(&this->camera);
 }
 
 ImGuiManager::~ImGuiManager()
@@ -36,7 +37,11 @@ sf::RenderWindow* ImGuiManager::initialize()
 	ImGui::SFML::Init(*renderWindow);
 	renderWindow->resetGLStates();
 	// Provide to locator
-	Locator::provide(renderWindow);
+	Locator::provide(&renderWindow);
+
+	/// ---------- Set Up Camera ----------
+	this->camera = new Camera();
+	Locator::provide(&camera);
 
 	/// ---------- Set Up MapRenderer ----------
 	this->mapRenderer.initialize(renderWindow);
@@ -54,7 +59,7 @@ sf::RenderWindow* ImGuiManager::initialize()
 	// Behavior Definition
 	std::function<void(Widget*)> titleB = [](Widget* self) {
 		InputText* real = static_cast<InputText*>(self);
-		Locator::getRenderWindow()->setTitle(real->getInput());
+		(*Locator::getRenderWindow())->setTitle(real->getInput());
 	};
 	// Add behavior to widget
 	titleW->addBehavior(titleB);
@@ -80,21 +85,19 @@ sf::RenderWindow* ImGuiManager::initialize()
 
 			// Display mouse coordinates related to world
 			sf::Vector2i otherFormatMousePos = mousePos;
-			sf::Vector2f pixelToCoords = Locator::getRenderWindow()->mapPixelToCoords(otherFormatMousePos);
+			sf::Vector2f pixelToCoords = (*Locator::getRenderWindow())->mapPixelToCoords(otherFormatMousePos);
 			ImGui::Text(
 				"Coordinates related to world: (%.1f,%.1f)",
 				pixelToCoords.x,
 				pixelToCoords.y
 			);
 
-			// Display where view's center is so that worldcoordinates are correct
-			sf::Vector2f centre = Locator::getRenderWindow()->getView().getCenter();
+			// Display the current zoom-value
+			float currentZoom = (*Locator::getCamera())->getZoom();
 			ImGui::Text(
-				"Center of the view: (%.1f,%.1f)",
-				centre.x,
-				centre.y
+				"Current Zoom: %.1f",
+				currentZoom
 			);
-
 		}
 	};
 	// Add behavior to widget
@@ -151,13 +154,8 @@ void ImGuiManager::processInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) ||
 		sf::Mouse::isButtonPressed(sf::Mouse::Button::Middle))
 	{
-		this->camera.move(this->deltaMousePos);
+		this->camera->move(this->deltaMousePos);
 	}
-	// Camera Zoom
-	//if (sf::Mouse::isButtonPressed(sf::Mouse::Wheel::VerticalWheel)) {
-	//	sf::View view = Locator::getRenderWindow()->getView();
-	//	view.zoom(1.01f);
-	//}
 
 }
 
@@ -171,14 +169,15 @@ void ImGuiManager::processEvents(sf::RenderWindow &window)
 			window.close();
 		}
 
+		// Camera zoom can't be anything else than events because of SFML sadly.
 		if (event.type == sf::Event::MouseWheelScrolled) {
 			if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
 
 				if (event.mouseWheelScroll.delta > 0) {
-					this->camera.zoomIn();
+					this->camera->zoomIn();
 				}
 				else {
-					this->camera.zoomOut();
+					this->camera->zoomOut();
 				}
 			}
 		}

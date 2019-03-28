@@ -55,9 +55,9 @@ void MapRenderer::drawLine(sf::Vector2f origin)
 		10.0f,	// Height
 		0.5f	// Width
 	));
-	line.setPosition(Locator::getRenderWindow()->mapPixelToCoords(sf::Vector2i(origin)));
+	line.setPosition((*Locator::getRenderWindow())->mapPixelToCoords(sf::Vector2i(origin)));
 
-	Locator::getRenderWindow()->draw(line);
+	(*Locator::getRenderWindow())->draw(line);
 }
 
 void MapRenderer::initialize(sf::RenderWindow *renderWindow)

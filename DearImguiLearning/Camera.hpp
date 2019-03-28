@@ -13,8 +13,12 @@ class ZoomState;
 
 class Camera {
 private:
+	// Contains States
 	Storage* storage;
+
+	// Modified by states: 
 	ZoomState* zoomState;
+	int currentZoom;
 
 public:
 	Camera();
@@ -25,6 +29,7 @@ public:
 	void move(sf::Vector2i deltaMousePos);
 	void zoomIn();
 	void zoomOut();
+	float getZoom();
 };
 
 

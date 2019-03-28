@@ -2,10 +2,10 @@
 
 
 struct CameraSettings {
-	float zoomSpeed;
-	float zoomMax;
-	float zoomMin;
-	float scrollSpeed;
+	int zoomSpeed;
+	int zoomMax;
+	int zoomMin;
+	int scrollSpeed;
 };
 
 

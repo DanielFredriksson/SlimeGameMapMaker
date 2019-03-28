@@ -40,7 +40,7 @@ private:
 	std::vector<Window*> windows;
 
 	MapRenderer mapRenderer;
-	Camera camera;
+	Camera* camera;
 
 	sf::Vector2i oldMousePos = { 0, 0 };
 	sf::Vector2i deltaMousePos = { 0, 0 };

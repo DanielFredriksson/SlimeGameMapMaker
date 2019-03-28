@@ -24,5 +24,5 @@ void GridManager::clean()
 
 void GridManager::test()
 {
-	Locator::getRenderWindow()->draw(this->testTile);
+	(*Locator::getRenderWindow())->draw(this->testTile);
 }

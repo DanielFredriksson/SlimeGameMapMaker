@@ -1,7 +1,8 @@
 #include "ZoomStateMin.h"
 #include "ZoomStateMid.h"
 
-ZoomStateMin::ZoomStateMin(ZoomState *pZoomState) : ZoomState(pZoomState) 
+ZoomStateMin::ZoomStateMin(const Storage* pStorage, ZoomState** paZoomState, int* pZoom)
+	: ZoomState(pStorage, paZoomState, pZoom)
 {
 }
 ZoomStateMin::~ZoomStateMin() 
@@ -16,9 +17,9 @@ void ZoomStateMin::zoomIn()
 void ZoomStateMin::zoomOut()
 {
 	// Zoom
-	this->zoom(1 + this->pCameraSettings->scrollSpeed);
+	this->zoom(this->pCameraSettings->zoomSpeed);
 	// Save Zoom Value
-	this->currentZoom -= this->pCameraSettings->zoomSpeed;
+	*this->currentZoom -= this->pCameraSettings->zoomSpeed;
 	// Change state!
-	this->pZoomState = this->pStorage->zoomMid;
+	*this->paZoomState = this->pStorage->zoomMid;
 }

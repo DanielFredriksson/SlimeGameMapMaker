@@ -2,7 +2,8 @@
 #include "ZoomStateMax.h"
 #include "ZoomStateMin.h"
 
-ZoomStateMid::ZoomStateMid(ZoomState * pZoomState) : ZoomState(pZoomState)
+ZoomStateMid::ZoomStateMid(const Storage* pStorage, ZoomState** paZoomState, int* pZoom)
+	: ZoomState(pStorage, paZoomState, pZoom)
 {
 }
 
@@ -12,24 +13,24 @@ ZoomStateMid::~ZoomStateMid()
 
 void ZoomStateMid::zoomIn() {
 	// Zoom
-	this->zoom(1 + this->pCameraSettings->scrollSpeed);
+	this->zoom(-1*this->pCameraSettings->zoomSpeed);
 	// Save Zoom Value
-	this->currentZoom += this->pCameraSettings->zoomSpeed;
+	*this->currentZoom += this->pCameraSettings->zoomSpeed;
 	// Check if Min is met...
-	if (this->currentZoom == this->pCameraSettings->zoomMin) {
+	if (*this->currentZoom >= this->pCameraSettings->zoomMin) {
 		// ... And if it is, change current zoomstate!
-		this->pZoomState = this->pStorage->zoomMin;
+		*this->paZoomState = this->pStorage->zoomMin;
 	}
 }
 
 void ZoomStateMid::zoomOut() {
 	// Zoom
-	this->zoom(1 - this->pCameraSettings->scrollSpeed);
+	this->zoom(this->pCameraSettings->zoomSpeed);
 	// Save Zoom Value
-	this->currentZoom -= this->pCameraSettings->zoomSpeed;
+	*this->currentZoom -= this->pCameraSettings->zoomSpeed;
 	// Check if Max is met...
-	if (this->currentZoom == this->pCameraSettings->zoomMax) {
+	if (*this->currentZoom <= this->pCameraSettings->zoomMax) {
 		// ... And if it is, change current zoomstate!
-		this->pZoomState = this->pStorage->zoomMax;
+		*this->paZoomState = this->pStorage->zoomMax;
 	}
 }
