@@ -66,25 +66,28 @@ void MapRenderer::initialize(sf::RenderWindow *renderWindow)
 	this->initializeView(renderWindow);
 
 	// Initialize Grid!
-	sf::Vector2i gridSize{ 15, 15 };
+	sf::Vector2i gridSize{ 30, 30 };
 	sf::Vector2f gridOrigin{ 10, 10 };
-	int tileSize = 7;
-	this->nonTiledManager.initialize(gridSize, gridOrigin, tileSize);
+	int tileSize = 20;
+
+	this->gridManager.initialize(gridSize, gridOrigin, tileSize);
+
 
 }
 
 void MapRenderer::clean()
 {
 	delete this->view;
-	this->nonTiledManager.clean();
 }
 
 void MapRenderer::renderGrid() 
 {
-	this->gridManager.test();
-}
+	/*
+	- Render all tiles.
+	- Render grid if it's turned on.
 
-void MapRenderer::renderNonTiledGrid()
-{
-	this->nonTiledManager.drawNonTiledGrid();
+	
+	*/
+	this->gridManager.test();
+	this->gridManager.testRenderVoidTiles();
 }

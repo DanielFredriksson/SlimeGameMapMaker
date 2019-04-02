@@ -7,7 +7,6 @@
 #include "SFML/System.hpp"
 
 /// INTERNAL
-#include "NonTiledGridManager.h"
 #include "GridManager.h"
 
 // TESTING
@@ -18,7 +17,6 @@
 class MapRenderer : public sf::Drawable {
 private:
 	GridManager gridManager;
-	NonTiledGridManager nonTiledManager;
 	sf::Sprite *sprite = nullptr;
 	sf::Texture *texture = nullptr;
 	sf::View *view = nullptr;

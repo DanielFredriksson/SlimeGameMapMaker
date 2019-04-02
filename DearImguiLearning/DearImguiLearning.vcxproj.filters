@@ -84,9 +84,6 @@
     <ClCompile Include="Tile.cpp">
       <Filter>Source Files\MapRenderer %28CPP%29</Filter>
     </ClCompile>
-    <ClCompile Include="NonTiledGridManager.cpp">
-      <Filter>Source Files\MapRenderer %28CPP%29</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\Camera %28CPP%29</Filter>
     </ClCompile>
@@ -132,9 +129,6 @@
       <Filter>Header Files\Widgets %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="MapRenderer.h">
-      <Filter>Header Files\MapRenderer %28HPP%29</Filter>
-    </ClInclude>
-    <ClInclude Include="NonTiledGridManager.h">
       <Filter>Header Files\MapRenderer %28HPP%29</Filter>
     </ClInclude>
     <ClInclude Include="GridManager.h">
