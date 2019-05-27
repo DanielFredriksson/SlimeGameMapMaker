@@ -35,8 +35,6 @@ public:
 
 
 	void renderGrid();
-	void renderNonTiledGrid();
-
 };
 
 #endif

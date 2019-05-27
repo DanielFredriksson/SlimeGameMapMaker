@@ -169,7 +169,7 @@
     <ClCompile Include="..\Imgui\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="..\Imgui\imgui-sfml-master\imgui-SFML.cpp" />
     <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="DearImguiLearning.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="GlobalSettings.cpp" />
     <ClCompile Include="GridManager.cpp" />
     <ClCompile Include="ImGuiManager.cpp" />
@@ -184,6 +184,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="DropDownWidget.hpp" />
+    <ClInclude Include="MenuWidget.hpp" />
     <ClInclude Include="ZoomState.h" />
     <ClInclude Include="ZoomStateMax.h" />
     <ClInclude Include="ZoomStateMid.h" />

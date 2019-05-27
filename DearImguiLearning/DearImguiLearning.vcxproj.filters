@@ -43,11 +43,11 @@
     <Filter Include="Source Files\Camera %28CPP%29\ZoomStates %28CPP%29">
       <UniqueIdentifier>{764188f5-1e50-4a40-8050-0ffe962949a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Widgets %28HPP%29\MenuWidgets">
+      <UniqueIdentifier>{44cb2c38-de89-4fe8-9ef2-76bfc3117055}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DearImguiLearning.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Imgui\imgui-master\imgui.cpp">
       <Filter>Source Files\Imgui %28CPP%29</Filter>
     </ClCompile>
@@ -98,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="GlobalSettings.cpp">
       <Filter>Source Files\Locator %28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="ZoomState.h">
       <Filter>Header Files\Camera %28HPP%29\ZoomStates %28HPP%29</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWidget.hpp">
+      <Filter>Header Files\Widgets %28HPP%29\MenuWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownWidget.hpp">
+      <Filter>Header Files\Widgets %28HPP%29</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

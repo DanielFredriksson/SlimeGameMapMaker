@@ -78,6 +78,7 @@ void MapRenderer::initialize(sf::RenderWindow *renderWindow)
 void MapRenderer::clean()
 {
 	delete this->view;
+	this->gridManager.clean();
 }
 
 void MapRenderer::renderGrid() 

@@ -3,9 +3,9 @@
 
 void GridManager::generateGrid()
 {
-	sf::Vector2f origin = this->origin;
-	sf::Vector2i tileCounts = this->tileCounts;
-	float tileSize = this->tileSize;
+	sf::Vector2f origin = this->grid.origin;
+	sf::Vector2i tileCounts = this->grid.tileCounts;
+	float tileSize = this->grid.tileSize;
 
 	/// ---------------- CONVERTING FROM CARTESIAN INTO ISOMETRIC ----------------
 	// Cartesian Corners

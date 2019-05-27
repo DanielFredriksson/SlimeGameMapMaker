@@ -131,7 +131,6 @@ void ImGuiManager::clean()
 
 void ImGuiManager::renderTEST()
 {
-	this->mapRenderer.renderNonTiledGrid();
 	this->mapRenderer.renderGrid();
 }
 
@@ -146,9 +145,6 @@ void ImGuiManager::updateWindows()
 
 void ImGuiManager::processInput()
 {
-	/*
-	Can probably be made more efficient using arrays rather than if-cases
-	*/
 	sf::Vector2i newMousePos = sf::Mouse::getPosition();
 	this->deltaMousePos = newMousePos - this->oldMousePos;
 	this->oldMousePos = newMousePos;
@@ -163,7 +159,6 @@ void ImGuiManager::processInput()
 	{
    		this->camera->move(this->deltaMousePos);
 	}
-
 }
 
 void ImGuiManager::processEvents(sf::RenderWindow &window)

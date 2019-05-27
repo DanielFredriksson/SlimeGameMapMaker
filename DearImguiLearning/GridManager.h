@@ -20,7 +20,7 @@ struct Grid {
 
 	// Utilities
 	void clean() {
-
+		delete this->vertices;
 	}
 };
 

@@ -16,6 +16,8 @@ class Widget {
 protected:
 	std::vector<std::function<void(Widget*)>> behaviors;
 
+
+
 public:
 	Widget();
 	virtual ~Widget();

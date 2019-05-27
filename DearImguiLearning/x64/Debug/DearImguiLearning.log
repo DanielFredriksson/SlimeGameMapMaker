@@ -1,3 +1,11 @@
-﻿  MapRenderer.cpp
-c:\hobbyd\slimegamemapmaker\dearimguilearning\maprenderer.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  ImGuiManager.cpp
+c:\hobbyd\slimegamemapmaker\imgui\imgui-master\imgui.h(168): warning C4244: 'argument': conversion from 'const float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  c:\hobbyd\slimegamemapmaker\dearimguilearning\imguimanager.cpp(87): note: see reference to function template instantiation 'ImVec2::operator sf::Vector2<int>(void) const<int>' being compiled
+  Window.cpp
+  main.cpp
+  Generating Code...
   DearImguiLearning.vcxproj -> C:\HobbyD\SlimeGameMapMaker\x64\Debug\DearImguiLearning.exe
